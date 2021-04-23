@@ -1,0 +1,14 @@
+<div>
+    <h2>{{titulo}}</h2>
+    <h3>{{tituloListado}}</h3>
+    <ul>
+        <li>GTA V</li>
+        <li>MGS V</li>
+        <li>Hades</li>
+        <li>The Witcher</li>
+        <li *ngFor="let videoJuego of listado">{{videoJuego}}</li>
+    </ul>
+
+    <input type="text" name="newTitle" id="newTitle">
+    <button (click)="cambiarTitulo()">Cambiar titulo</button>
+</div>
