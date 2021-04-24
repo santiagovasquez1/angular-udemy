@@ -1,0 +1,34 @@
+<!-- la directiva ng-class, nos permite agragar estilos si se cumple cierta condivcion -->
+
+<div class="zapatillaDetalle" (mouseover)="showButton(true)" (mouseleave)="showButton(false)">
+    <div class="zapatillasStock" *ngIf="zapatilla.stok">
+        <h3>{{zapatilla.marca}}</h3>
+        <p>
+            Talla:{{zapatilla.talla}} --
+            <span [class.altoPrecio]="zapatilla.precio>=80" [ngClass]="{'fondoRojo': zapatilla.precio>=80, 'subrayado':zapatilla.precio<=20}">Precio: ${{zapatilla.precio}}</span>
+            <span style="color: green;" *ngIf="zapatilla.precio<=20">
+            !Puta que oferton¡
+          </span>
+        </p>
+        <p>El color de la mayoria de nuestras zapatillas es:</p>
+        <ul [ngSwitch]="color">
+            <li *ngSwitchCase="'#235e3d'">
+                El color de tu zapatilla es el <span [style.color]="color">verde</span>
+            </li>
+            <li *ngSwitchCase="'#ca3413'">
+                El color de tu zapatilla es el <span [style.color]="color">rojo</span>
+            </li>
+            <li *ngSwitchDefault>
+                El color de tu zapatilla es el <span [style.color]="color">azul</span>
+            </li>
+        </ul>
+        <div>
+            <div *ngIf="isVisible" id="selectorTheme">
+                <div id="toGreen" (click)="cambiarColor('#235e3d')"></div>
+                <div id="toRed" (click)="cambiarColor('#ca3413')"></div>
+                <div id="toBlue" (click)="cambiarColor('#1f87c4')"></div>
+            </div>
+        </div>
+    </div>
+
+</div>

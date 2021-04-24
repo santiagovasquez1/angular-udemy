@@ -20,13 +20,28 @@ export class VideoJuegoComponent implements OnInit, DoCheck, OnDestroy {
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
+    let titleList = document.getElementById('titleList');
+    titleList.addEventListener('click', this.onTitleClick);
+
+    titleList.addEventListener('mouseover', function () {
+      this.style.cursor = 'pointer';
+      this.style.background = 'red';
+      this.style.padding='5px';
+      this.style.color = "#ccc";
+      this.style.transition = '1000ms';
+    });
+
+    titleList.addEventListener('mouseout', function () {
+      this.style.cursor = 'arrow';
+      this.style.background = 'blue';
+      this.style.padding='2px';
+      this.style.color = 'white';
+      this.style.transition = '300ms';
+    });
     console.log("OnInit ejecutado");
   }
 
   ngDoCheck(): void {
-    /*
-      Metodo que se ejecuta, cada vez que ocurra un cambio en nuestro componente
-    */
     console.log("Do Check ejecutado");
   }
 
@@ -40,5 +55,14 @@ export class VideoJuegoComponent implements OnInit, DoCheck, OnDestroy {
   cambiarTitulo() {
     let newTitle = (<HTMLInputElement>document.getElementById('newTitle')).value;
     this.titulo = newTitle;
+  }
+
+  onTitleClick() {
+    console.log("Click en title");
+  }
+
+  mouseEvent(event: MouseEvent) {
+    console.log(event.x);
+    console.log(event.y)
   }
 }

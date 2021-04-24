@@ -1,6 +1,35 @@
+<!-- Las directivas son estructuras que nos permiten modificar el html
+  entre ellas se encuentran
+  *ngIf
+  *ngFor
+  [style.background]
+  [(ngModel)] nos permite modificar una propiedad de nuestros datos de manera instantanea
+-->
+
 <div>
     <h2>{{titulo}}</h2>
+
+    <h3>Añadir marca</h3>
+    <p>
+        <input type="text" name="addMarca" id="addMarca" [(ngModel)]="miMarca" (blur)="onBlur()" (focus)="onFocus()" (keyup.enter)="mostrarPalabra()">
+    </p>
+    <strong>
+        {{miMarca}}
+    </strong>
+    <p>
+        <button (click)="addMarca()">Añadir marca</button>
+    </p>
+
+
+    <h2>¡¡¡Compar las zapatillas de las mejores marcas!!!!</h2>
     <ul>
-        <li *ngFor="let zapatilla of listadoZapatillas">{{zapatilla}}</li>
+        <li *ngFor="let marca of marcas">
+            {{marca}}
+            <button (click)="eliminarMarca(index)">Eliminar Marca</button>
+        </li>
     </ul>
+    <h3>Las zapatillas disponibles son :</h3>
+    <div class="zapatillaContainer" *ngFor="let zapatilla of listadoZapatillas">
+        <zapatilla-detalle [zapatilla]="zapatilla" *ngIf="zapatilla.stok"></zapatilla-detalle>
+    </div>
 </div>

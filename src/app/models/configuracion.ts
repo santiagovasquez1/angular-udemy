@@ -1,5 +1,5 @@
 export var configuracion={
-  color:"Red",
+  color:"green",
   fondo:"#eee",
   titulo:"Aplicación con angular",
   descripcion:"Aprendiendo angular con Udemy"
