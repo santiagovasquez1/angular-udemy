@@ -1,0 +1,22 @@
+.navMenu {
+    background: #333;
+    height: 30px;
+    width: 100%;
+}
+
+.navMenu a {
+    padding-right: 5px;
+    padding-left: 5px;
+    color: white;
+    text-decoration: none;
+    line-height: 30px;
+    transition: 300ms;
+}
+
+.navMenu a:hover {
+    background: #235e3d;
+}
+
+.active {
+    background: #235e3d;
+}

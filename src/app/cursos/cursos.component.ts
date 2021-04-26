@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+
 
 @Component({
   selector: 'cursos',
@@ -12,12 +14,29 @@ import { Component, OnInit } from '@angular/core';
 */
 export class CursosComponent implements OnInit {
 
-  constructor() { }
+  nombre: string;
+  apellido: string;
+  followers: number;
+  constructor(private route: ActivatedRoute, private router: Router) {
+
+  }
 
   /*
     Metodo que se ejecuta al cargar el componente
   */
   ngOnInit(): void {
+    this.route.params.subscribe((params: Params) => {
+      this.nombre = params.nombre;
+      this.followers = parseInt(params.followers);
+      // this.nombre = params['nombre'];
+      console.log(this.nombre);
+    });
+  }
+
+
+  redirigir(){
+    console.log('redirigido');
+    this.router.navigate(['/zapatillas']);
   }
 
 }

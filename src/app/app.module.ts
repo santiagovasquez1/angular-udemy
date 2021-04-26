@@ -6,6 +6,8 @@ import { ZapatillasComponent } from "./Zapatillas/zapatillas.component";
 import { CursosComponent } from './cursos/cursos.component';
 import { ZapatillaDetalleComponent } from './Zapatillas/zapatilla-detalle/zapatilla-detalle.component';
 import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app.routing';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
 
@@ -15,11 +17,13 @@ import { FormsModule } from '@angular/forms';
     VideoJuegoComponent,
     ZapatillasComponent,
     CursosComponent,
-    ZapatillaDetalleComponent
+    ZapatillaDetalleComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   //Componente principal de la aplicacion, simil a clase main

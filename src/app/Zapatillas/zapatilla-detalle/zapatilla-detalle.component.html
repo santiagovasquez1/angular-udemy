@@ -5,7 +5,7 @@
         <h3>{{zapatilla.marca}}</h3>
         <p>
             Talla:{{zapatilla.talla}} --
-            <span [class.altoPrecio]="zapatilla.precio>=80" [ngClass]="{'fondoRojo': zapatilla.precio>=80, 'subrayado':zapatilla.precio<=20}">Precio: ${{zapatilla.precio}}</span>
+            <span [class.altoPrecio]="zapatilla.precio>=80" [ngClass]="{'altoPrecio': zapatilla.precio>=80, 'subrayado':zapatilla.precio<=20}">Precio: ${{zapatilla.precio}}</span>
             <span style="color: green;" *ngIf="zapatilla.precio<=20">
             !Puta que oferton¡
           </span>
