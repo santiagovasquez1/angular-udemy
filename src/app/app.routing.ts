@@ -1,3 +1,4 @@
+import { ExternoComponent } from './externo/externo.component';
 import { CursosComponent } from './cursos/cursos.component';
 //Importar modulos del router de angular
 import { Routes, RouterModule } from '@angular/router'
@@ -9,12 +10,13 @@ import { NgModule } from '@angular/core';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  {path:'',component:HomeComponent},
+  { path: '', component: HomeComponent },
   { path: 'videojuego', component: VideoJuegoComponent },
   { path: 'zapatillas', component: ZapatillasComponent },
   { path: 'cursos', component: CursosComponent },
   { path: 'cursos/:nombre/:followers', component: CursosComponent },
   { path: 'cursos/:nombre/:apellidos', component: CursosComponent },
+  { path: 'externo' ,component:ExternoComponent},
   { path: '**', component: HomeComponent } //Ruta 404
 ];
 

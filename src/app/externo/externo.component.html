@@ -1,0 +1,18 @@
+<p>externo works!</p>
+<p>
+    {{fecha|date:'M/d/yy, h:mm:ss a'}}
+</p>
+<p>
+    Ejemplo de pipe <span>{{4|calculadora:2}}</span>
+</p>
+<br>
+<input type="text" name="userId" id="userId" [(ngModel)]="titleId" placeholder="Ingrese el id del titulo que desea consultar" (keyup.enter)="cargaUsuario()">
+
+<div *ngIf="!posts">
+    <p>Cargando......</p>
+</div>
+
+<div *ngIf="posts">
+    <h2>{{posts.title|uppercase}}</h2>
+    <p>{{posts.body}}</p>
+</div>

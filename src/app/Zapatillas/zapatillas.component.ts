@@ -1,9 +1,11 @@
+import { ZapatillaServiceService } from './../services/zapatilla-service.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { ZapatillaModel } from '../models/zapatilla-model';
 
 @Component({
   selector: 'zapatillas',
-  templateUrl: './zapatillas.component.html'
+  templateUrl: './zapatillas.component.html',
+  providers: [ZapatillaServiceService]
 })
 export class ZapatillasComponent implements OnInit {
   titulo: string;
@@ -12,23 +14,14 @@ export class ZapatillasComponent implements OnInit {
   isOver: boolean;
   miMarca: string;
 
-  constructor() {
+  constructor(private ZapatillaService: ZapatillaServiceService) {
     this.titulo = "Componente de zapatillas";
     this.isOver = false;
-    this.listadoZapatillas = [
-      new ZapatillaModel('nike', '40', 20, '#235e3d', true),
-      new ZapatillaModel('adidas', '36', 80, '#ca3413', true),
-      new ZapatillaModel('rebook', '36', 40, '#ca3413', true),
-      new ZapatillaModel('puma', '40', 25, '#235e3d', false),
-      new ZapatillaModel('newBalance', '42', 10, '#1f87c4', true),
-      new ZapatillaModel('adidas', '42', 15, '#235e3d', true),
-      new ZapatillaModel('nike', '42', 25, '#1f87c4', true),
-    ];
-
     this.marcas = new Array();
   }
 
   ngOnInit(): void {
+    this.listadoZapatillas = this.ZapatillaService.getZapatillas();
     this.getMarcas();
   }
 
@@ -54,15 +47,15 @@ export class ZapatillasComponent implements OnInit {
     this.marcas.splice(index, 1);
   }
 
-  onBlur(){
+  onBlur() {
     console.log("Has salido del input");
   }
 
-  onFocus(){
+  onFocus() {
     console.log("Has ingresado al control");
   }
 
-  mostrarPalabra(){
+  mostrarPalabra() {
     alert(`La palabre es : ${this.miMarca}`);
   }
 }

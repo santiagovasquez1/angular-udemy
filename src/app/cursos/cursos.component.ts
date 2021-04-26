@@ -34,7 +34,7 @@ export class CursosComponent implements OnInit {
   }
 
 
-  redirigir(){
+  redirigir() {
     console.log('redirigido');
     this.router.navigate(['/zapatillas']);
   }
