@@ -11,6 +11,8 @@ import { AppRoutingModule } from './app.routing';
 import { HomeComponent } from './home/home.component';
 import { ExternoComponent } from './externo/externo.component';
 import { CalculadoraPipe } from './pipe/calculadora.pipe';
+import { ContactoComponent } from './contacto/contacto.component';
+import { CreateUserComponent } from './create-user/create-user.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { CalculadoraPipe } from './pipe/calculadora.pipe';
     ZapatillaDetalleComponent,
     HomeComponent,
     ExternoComponent,
-    CalculadoraPipe
+    CalculadoraPipe,
+    ContactoComponent,
+    CreateUserComponent
   ],
   imports: [
     BrowserModule,

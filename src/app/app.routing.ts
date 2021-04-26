@@ -1,3 +1,5 @@
+import { CreateUserComponent } from './create-user/create-user.component';
+import { ContactoComponent } from './contacto/contacto.component';
 import { ExternoComponent } from './externo/externo.component';
 import { CursosComponent } from './cursos/cursos.component';
 //Importar modulos del router de angular
@@ -16,7 +18,9 @@ const routes: Routes = [
   { path: 'cursos', component: CursosComponent },
   { path: 'cursos/:nombre/:followers', component: CursosComponent },
   { path: 'cursos/:nombre/:apellidos', component: CursosComponent },
-  { path: 'externo' ,component:ExternoComponent},
+  { path: 'externo', component: ExternoComponent },
+  { path: 'contacto', component: ContactoComponent },
+  { path: 'crear usuario', component: CreateUserComponent },
   { path: '**', component: HomeComponent } //Ruta 404
 ];
 

@@ -1,0 +1,18 @@
+<h2>Crear Usuario</h2>
+<form (ngSubmit)="onSubmit()" #formCreateUser="ngForm">
+    <p>
+        <label for="nombre">Nombre Usuario</label>
+        <input type="text" name="nombre" id="nombre" #nombre="ngModel" [(ngModel)]="userReqres.name">
+    </p>
+    <p>
+        <label for="job">Trabajo Usuario</label>
+        <input type="text" name="job" id="job" #job="ngModel" [(ngModel)]="userReqres.job">
+    </p>
+    <input type="submit" value="Crear Usuario">
+</form>
+
+<div *ngIf="userGuardado">
+    <h3>{{userGuardado.name}}----{{userGuardado.id}}</h3>
+    <p>{{userGuardado.job}}</p>
+    <p><strong>Creado el :</strong> {{userGuardado.createdAt|date:'M/d/yy, h:mm:ss a'}}</p>
+</div>
